@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Hypertube REST API Documentation" />
+    <title>Hypertube API Docs</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="header-inner">
+        <div class="header-brand">
+          <span class="brand-icon" aria-hidden="true">⬡</span>
+          <div>
+            <h1 class="header-title">Hypertube API</h1>
+            <p class="header-subtitle">RESTful API with OAuth2 — v1.0</p>
+          </div>
+        </div>
+        <a
+          class="header-badge"
+          href="#endpoints"
+          aria-label="Jump to endpoints"
+        >12 endpoints</a>
+      </div>
+    </header>
+
+    <main id="main-content">
+      <!-- Controls -->
+      <section class="controls" aria-label="Filter and search controls">
+        <div class="controls-inner">
+          <!-- Search -->
+          <div class="search-wrapper">
+            <label for="search-input" class="sr-only">Search endpoints</label>
+            <span class="search-icon" aria-hidden="true">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none"
+                   stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                   stroke-linejoin="round">
+                <circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/>
+              </svg>
+            </span>
+            <input
+              id="search-input"
+              type="search"
+              class="search-input"
+              placeholder="Search by path or description…"
+              autocomplete="off"
+              aria-label="Search endpoints by path or description"
+            />
+          </div>
+
+          <!-- Method filters -->
+          <nav class="method-filters" aria-label="Filter by HTTP method">
+            <button
+              class="method-btn active"
+              data-method="ALL"
+              aria-pressed="true"
+            >ALL</button>
+            <button
+              class="method-btn get"
+              data-method="GET"
+              aria-pressed="false"
+            >GET</button>
+            <button
+              class="method-btn post"
+              data-method="POST"
+              aria-pressed="false"
+            >POST</button>
+            <button
+              class="method-btn patch"
+              data-method="PATCH"
+              aria-pressed="false"
+            >PATCH</button>
+            <button
+              class="method-btn delete"
+              data-method="DELETE"
+              aria-pressed="false"
+            >DELETE</button>
+          </nav>
+        </div>
+
+        <!-- Result count -->
+        <p class="results-count" aria-live="polite" aria-atomic="true">
+          Showing <strong id="visible-count">12</strong> of 12 endpoints
+        </p>
+      </section>
+
+      <!-- Endpoint cards -->
+      <section id="endpoints" class="endpoints-list" aria-label="API endpoints">
+        <!-- Cards are injected by script.js -->
+      </section>
+
+      <!-- Empty state -->
+      <div class="empty-state hidden" id="empty-state" aria-live="polite">
+        <span class="empty-icon" aria-hidden="true">🔍</span>
+        <p>No endpoints match your search.</p>
+        <button class="reset-btn" id="reset-btn">Clear filters</button>
+      </div>
+    </main>
+
+    <footer class="site-footer">
+      <p>
+        Hypertube API Docs &mdash; built with plain HTML, CSS &amp; Vanilla JS
+      </p>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
